@@ -14,7 +14,7 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key:
+    key: the very very secret key
 
 ota:
   password: !secret ota_password
@@ -29,15 +29,15 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid:
-    password:
+    ssid: "S3-Microradar-2"
+    password: "yetAnotherSecret"
 
 captive_portal:
 
 uart:
   id: uart_modbus
-  tx_pin: GPIOxx
-  rx_pin: GPIOxx
+  tx_pin: GPIO11
+  rx_pin: GPIO10
   baud_rate: 256000 
   parity: NONE
   stop_bits: 1
@@ -56,7 +56,7 @@ binary_sensor:
       name: out pin presence status
 
   - platform: gpio
-    pin: xx
+    pin: 12
     name: gpio out pin presence
     device_class: presence
 
